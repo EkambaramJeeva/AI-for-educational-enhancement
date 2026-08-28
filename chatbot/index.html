@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduSphere - Interactive Learning Platform</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="chatbot.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  <style>
+    /* Additional CSS for animations and educational content */
+    .knowledge-card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+    
+    .knowledge-card.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .subject-badge {
+      display: inline-block;
+      padding: 5px 15px;
+      background: #4CAF50;
+      color: white;
+      border-radius: 20px;
+      margin: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .subject-badge:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+    }
+    
+    .learning-path {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+    }
+    
+    .path-node {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: #2196F3;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+      cursor: pointer;
+      transition: all 0.5s ease;
+    }
+    
+    .path-node:hover {
+      transform: scale(1.2);
+      z-index: 10;
+    }
+    
+    .fun-fact {
+      background: #FFC107;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .interactive-demo {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    
+    .demo-button {
+      background: #9C27B0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .demo-button:hover {
+      background: #7B1FA2;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <header class="animate__animated animate__fadeInDown">
+    <div class="logo">EduSphere</div>
+    <nav>
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="courses.html" class="nav-link">Courses</a>
+      <a href="learning.html" class="nav-link">Learning Resources</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero animate__animated animate__fadeIn">
+    <h1>Expand Your Knowledge Horizons</h1>
+    <p>Join our interactive learning community with courses designed by experts from top universities.</p>
+    <a href="courses.html" class="btn animate__animated animate__pulse animate__infinite">Start Learning Today</a>
+    <div class="floating-icons">
+      <span class="material-symbols-rounded animate__animated animate__bounce animate__infinite animate__slow">science</span>
+      <span class="material-symbols-rounded animate__animated animate__bounce animate__infinite animate__slow animate__delay-1s">calculate</span>
+      <span class="material-symbols-rounded animate__animated animate__bounce animate__infinite animate__slow animate__delay-2s">history_edu</span>
+    </div>
+  </section>
+
+  <section class="knowledge-section">
+    <h2 class="animate__animated animate__fadeInLeft">Did You Know?</h2>
+    
+    <div class="knowledge-card" id="card1">
+      <h3>The Science of Learning</h3>
+      <p>Research shows that spaced repetition (reviewing material over increasing intervals) can improve long-term retention by up to 200% compared to cramming.</p>
+      <div class="fun-fact">
+        <strong>Pro Tip:</strong> Our platform uses adaptive algorithms to optimize your review schedule based on your performance.
+      </div>
+    </div>
+    
+    <div class="knowledge-card" id="card2">
+      <h3>Interactive Learning Benefits</h3>
+      <p>Students who engage with interactive content retain 75% of what they learn, compared to just 5% from lectures alone (National Training Laboratories).</p>
+      <div class="interactive-demo">
+        <p>Try our interactive math demo:</p>
+        <button class="demo-button" onclick="showMathDemo()">Show Me How It Works</button>
+        <div id="math-demo" style="display:none; margin-top:15px;">
+          <p>Solve for x: 2x + 5 = 15</p>
+          <input type="number" id="math-answer" placeholder="Your answer">
+          <button onclick="checkMathAnswer()">Check Answer</button>
+          <p id="math-feedback"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="subjects-section">
+    <h2 class="animate__animated animate__fadeInRight">Explore Our Subjects</h2>
+    <div class="subject-container">
+      <span class="subject-badge animate__animated animate__zoomIn">Mathematics</span>
+      <span class="subject-badge animate__animated animate__zoomIn animate__delay-1s">Computer Science</span>
+      <span class="subject-badge animate__animated animate__zoomIn animate__delay-2s">Literature</span>
+      <span class="subject-badge animate__animated animate__zoomIn animate__delay-3s">History</span>
+      <span class="subject-badge animate__animated animate__zoomIn animate__delay-4s">Biology</span>
+      <span class="subject-badge animate__animated animate__zoomIn animate__delay-5s">Physics</span>
+    </div>
+  </section>
+
+  <section class="learning-path-section">
+    <h2>Your Personalized Learning Path</h2>
+    <div class="learning-path">
+      <div class="path-node" style="top: 50px; left: 10%;">1</div>
+      <div class="path-node" style="top: 100px; left: 25%;">2</div>
+      <div class="path-node" style="top: 30px; left: 40%;">3</div>
+      <div class="path-node" style="top: 120px; left: 55%;">4</div>
+      <div class="path-node" style="top: 60px; left: 70%;">5</div>
+      <div class="path-node" style="top: 100px; left: 85%;">6</div>
+    </div>
+    <p>Our AI-powered system creates a customized learning journey based on your goals and progress.</p>
+  </section>
+
+  <!-- Enhanced Chatbot Integration -->
+  <button id="chatbot-toggler" class="animate__animated animate__bounceInUp animate__delay-3s">
+    <span class="material-symbols-rounded">school</span>
+    <span class="material-symbols-rounded">close</span>
+  </button>
+
+  <div class="chatbot-popup">
+    <div class="chat-header">
+      <div class="header-info">
+        <svg class="chatbot-logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+          <path d="M512 64C264.6 64 64 249.9 64 480c0 107.6 48.3 206.7 127.8 281.5-13.6 50.2-43.2 88.6-78.5 112.3-6.4 4.3-4.5 14 3.1 15 84.4 11.6 154.5-28.6 189.4-55.5 63 25.7 134.3 40.1 206.2 40.1 247.4 0 448-185.9 448-416S759.4 64 512 64z" />
+        </svg>
+        <h2 class="logo-text">Study Buddy</h2>
+      </div>
+      <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+    </div>
+    <div class="chat-body">
+      <div class="message bot-message">
+        <svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+          <path d="M512 64C264.6 64 64 249.9 64 480c0 107.6 48.3 206.7 127.8 281.5-13.6 50.2-43.2 88.6-78.5 112.3-6.4 4.3-4.5 14 3.1 15 84.4 11.6 154.5-28.6 189.4-55.5 63 25.7 134.3 40.1 206.2 40.1 247.4 0 448-185.9 448-416S759.4 64 512 64z" />
+        </svg>
+        <div class="message-text">
+          <p>Hello, learner! I'm your Study Buddy 🤓</p>
+          <p>I can help you with:</p>
+          <ul>
+            <li>Course recommendations</li>
+            <li>Study techniques</li>
+            <li>Quick quizzes</li>
+            <li>Learning resources</li>
+          </ul>
+          <p>What would you like to explore today?</p>
+        </div>
+      </div>
+    </div>
+    <div class="chat-footer">
+      <form action="#" class="chat-form">
+        <textarea placeholder="Ask me anything about learning..." class="message-input" required></textarea>
+        <div class="chat-controls">
+          <button type="button" id="emoji-picker" class="material-symbols-rounded">sentiment_satisfied</button>
+          <div class="file-upload-wrapper">
+            <input type="file" accept="image/*" id="file-input" hidden>
+            <img src="data:," alt="">
+            <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+            <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+          </div>
+          <button type="button" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/emoji-mart@5.5.2/dist/browser.js"></script>
+  <script>
+    // Animation triggers
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animate knowledge cards on scroll
+      const cards = document.querySelectorAll('.knowledge-card');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {threshold: 0.1});
+      
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+      
+      // Make path nodes float
+      const nodes = document.querySelectorAll('.path-node');
+      nodes.forEach((node, index) => {
+        // Random floating animation
+        setInterval(() => {
+          const currentTop = parseInt(node.style.top);
+          const newTop = currentTop + (Math.random() * 20 - 10);
+          node.style.top = Math.max(0, Math.min(150, newTop)) + 'px';
+        }, 2000 + index * 300);
+      });
+    });
+    
+    function showMathDemo() {
+      document.getElementById('math-demo').style.display = 'block';
+    }
+    
+    function checkMathAnswer() {
+      const answer = document.getElementById('math-answer').value;
+      const feedback = document.getElementById('math-feedback');
+      
+      if (answer == 5) {
+        feedback.textContent = 'Correct! Great job!';
+        feedback.style.color = 'green';
+        // Add celebration animation
+        feedback.classList.add('animate__animated', 'animate__tada');
+      } else {
+        feedback.textContent = 'Not quite. Remember to subtract 5 from both sides first.';
+        feedback.style.color = 'red';
+        // Add shake animation
+        feedback.classList.add('animate__animated', 'animate__headShake');
+      }
+      
+      // Remove animation classes after they complete
+      setTimeout(() => {
+        feedback.classList.remove('animate__animated', 'animate__tada', 'animate__headShake');
+      }, 1000);
+    }
+    
+    // Subject badges hover effect
+    const badges = document.querySelectorAll('.subject-badge');
+    badges.forEach(badge => {
+      badge.addEventListener('mouseover', function() {
+        this.style.transform = 'scale(1.1) translateY(-5px)';
+      });
+      badge.addEventListener('mouseout', function() {
+        this.style.transform = 'scale(1)';
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

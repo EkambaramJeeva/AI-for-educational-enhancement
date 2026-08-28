@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduSphere | Learning Resources</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9fb;
+      color: #333;
+    }
+
+    header {
+      background: #4A90E2;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2.5rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      border-bottom: 2px solid #4A90E2;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    ul.resource-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.resource-list li {
+      background: #fff;
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+
+    ul.resource-list li:hover {
+      transform: translateY(-3px);
+    }
+
+    ul.resource-list a {
+      color: #2c3e50;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    ul.resource-list a:hover {
+      color: #4A90E2;
+    }
+
+    .pdf-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: #4A90E2;
+      font-size: 0.95rem;
+    }
+
+    .pdf-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">EduSphere</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="#" style="font-weight:bold;">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <h1>Learning Resources</h1>
+
+  <div class="container">
+    <div class="section">
+      <h2>Online Learning Platforms</h2>
+      <ul class="resource-list">
+        <li>
+          <a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a>
+          <div class="pdf-link"><a href="pdfs/khan-academy-guide.pdf" download>Download Khan Academy Guide (PDF)</a></div>
+        </li>
+        <li>
+          <a href="https://www.coursera.org/" target="_blank">Coursera</a>
+          <div class="pdf-link"><a href="pdfs/coursera-intro.pdf" download>Download Coursera Intro (PDF)</a></div>
+        </li>
+        <li>
+          <a href="https://www.edx.org/" target="_blank">edX</a>
+          <div class="pdf-link"><a href="pdfs/edx-resources.pdf" download>Download edX Resources (PDF)</a></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Documentation & Cheat Sheets</h2>
+      <ul class="resource-list">
+        <li>
+          <a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs (HTML, CSS, JS)</a>
+          <div class="pdf-link"><a href="pdfs/html-css-js-cheatsheet.pdf" download>Download Web Dev Cheatsheet (PDF)</a></div>
+        </li>
+        <li>
+          <a href="https://pandas.pydata.org/docs/" target="_blank">Pandas Documentation</a>
+          <div class="pdf-link"><a href="pdfs/pandas-cheatsheet.pdf" download>Download Pandas Cheatsheet (PDF)</a></div>
+        </li>
+        <li>
+          <a href="https://scikit-learn.org/stable/" target="_blank">Scikit-learn Documentation</a>
+          <div class="pdf-link"><a href="pdfs/sklearn-cheatsheet.pdf" download>Download Sklearn Cheatsheet (PDF)</a></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+        <h2>Extra PDF Resources</h2>
+        <ul class="resource-list">
+          <!-- Local PDF -->
+          <li>
+            <a href="pdfs/python-crash-course.pdf" download>Python Crash Course (PDF)</a>
+          </li>
+          <!-- Online PDF -->
+          <li>
+            <a href="https://www.py4e.com/book.php" target="_blank">Python for Everybody (Online PDF)</a>
+            <div class="pdf-link"><a href="https://www.py4e.com/book.php" target="_blank">View & Download</a></div>
+          </li>
+          <!-- Local PDF -->
+          <li>
+            <a href="pdfs/machine-learning-basics.pdf" download>Machine Learning Basics (PDF)</a>
+          </li>
+          <!-- Online PDF -->
+          <li>
+            <a href="https://www.deeplearningbook.org/" target="_blank">Deep Learning Book by Ian Goodfellow</a>
+            <div class="pdf-link"><a href="https://www.deeplearningbook.org/" target="_blank">Download Deep Learning Book (Official)</a></div>
+          </li>
+          <!-- Local PDF -->
+          <li>
+            <a href="pdfs/data-science-roadmap.pdf" download>Data Science Roadmap (PDF)</a>
+          </li>
+          <!-- Online PDF -->
+          <li>
+            <a href="https://github.com/joelgrus/data-science-from-scratch/blob/master/docs/sample-chapters/data-science-scratch-sample.pdf" target="_blank">Data Science from Scratch (Sample PDF)</a>
+            <div class="pdf-link"><a href="https://github.com/joelgrus/data-science-from-scratch/blob/master/docs/sample-chapters/data-science-scratch-sample.pdf" target="_blank">View on GitHub</a></div>
+          </li>
+        </ul>
+      </div>
+      
+  </div>
+
+</body>
+</html>

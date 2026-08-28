@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Courses</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f4f6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.2rem;
+    }
+
+    .card-content h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-content p {
+      color: #4b5563;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-content a {
+      text-decoration: none;
+      background-color: #2563eb;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+
+    .card-content a:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Student Courses</h1>
+    <div class="grid">
+
+      <div class="card">
+        <img src="https://img.youtube.com/vi/UB1O30fR-EE/maxresdefault.jpg" alt="HTML Course">
+        <div class="card-content">
+          <h2>HTML for Beginners</h2>
+          <p>Learn the fundamentals of HTML and how to structure web pages.</p>
+          <a href="https://www.youtube.com/watch?v=UB1O30fR-EE" target="_blank"><i class="fab fa-youtube"></i> Watch  </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://img.youtube.com/vi/yfoY53QXEnI/maxresdefault.jpg" alt="CSS Course">
+        <div class="card-content">
+          <h2>CSS Crash Course</h2>
+          <p>A complete introduction to styling with CSS.</p>
+          <a href="https://www.youtube.com/watch?v=yfoY53QXEnI" target="_blank"><i class="fab fa-youtube"></i> Watch </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://img.youtube.com/vi/W6NZfCO5SIk/maxresdefault.jpg" alt="JavaScript Course">
+        <div class="card-content">
+          <h2>JavaScript Basics</h2>
+          <p>Start coding interactive web elements with JavaScript.</p>
+          <a href="https://www.youtube.com/watch?v=W6NZfCO5SIk" target="_blank"><i class="fab fa-youtube"></i> Watch </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://img.youtube.com/vi/rfscVS0vtbw/maxresdefault.jpg" alt="Python Course">
+        <div class="card-content">
+          <h2>Python for Beginners</h2>
+          <p>Learn Python programming from scratch. Great for absolute beginners.</p>
+          <a href="https://www.youtube.com/watch?v=rfscVS0vtbw" target="_blank"><i class="fab fa-youtube"></i> Watch </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://img.youtube.com/vi/ua-CiDNNj30/maxresdefault.jpg" alt="Data Science Course">
+        <div class="card-content">
+          <h2>Data Science Full Course</h2>
+          <p>Explore data analysis, visualization, and machine learning concepts.</p>
+          <a href="https://www.youtube.com/watch?v=ua-CiDNNj30" target="_blank"><i class="fab fa-youtube"></i> Watch </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://img.youtube.com/vi/3u1fu6f8Hto/maxresdefault.jpg" alt="React Course">
+        <div class="card-content">
+          <h2>React JS Tutorial</h2>
+          <p>Build modern web apps using React.js in this full course.</p>
+          <a href="https://www.youtube.com/watch?v=3u1fu6f8Hto" target="_blank"><i class="fab fa-youtube"></i> Watch </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
